@@ -89,7 +89,7 @@ export default function Home() {
           fontSize: "1.1rem"
         }}>
           <a href="https://twitter.com/its_me_emma_dee"
-          target="_blank"> slapped together by boobook </a>
+          target="_blank" rel="noreferrer"> slapped together by boobook </a>
         </div>
       </footer>
       )}

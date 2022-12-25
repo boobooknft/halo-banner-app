@@ -19,7 +19,7 @@ const Canvas = ( {y00tid} ) => {
         // url for the image of the y00t. Will be passed as props from y00tid in parent component.
         y00tImage.src = `https://metadata.y00ts.com/y/${y00tImageID}.png` 
         y00tImage.onload = () => setImage(y00tImage)
-    }, [])
+        }, [])
 
     // This creates a new image to store reference to the y00ts logo. It grabs the image from 
     // src and saves that reference in state. This can be duplicated to insert any other images 
@@ -29,7 +29,7 @@ const Canvas = ( {y00tid} ) => {
         y00tsLogo.crossOrigin = "anonymous"
         y00tsLogo.src= "https://y00ts-wallpaper.vercel.app/_next/image?url=%2Flogo.png&w=384&q=75"
         y00tsLogo.onload = () => setLogo(y00tsLogo)
-    }, [])
+         }, [])
 
 
     // This draws the image saved in state and grabs the image data from 1 background pixel.
