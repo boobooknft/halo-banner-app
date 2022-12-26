@@ -2,10 +2,13 @@ import Image from 'next/image'
 import logo from '../assets/y00ts-logo.png'
 import React, { useEffect, useState } from 'react'
 import TwitterCanvas from '../components/TwitterCanvas'
+import Y00tImage from '../components/Y00tImage'
 
 export default function Home() {
   const [active, setActive] = useState("y00t")
   const [y00tId, sety00tID] = useState(null)
+  const [dataURL, setDataURL] = useState("")
+  console.log(dataURL)
 
 
   const twitterClickHandler = () => {
@@ -92,10 +95,15 @@ export default function Home() {
           target="_blank" rel="noreferrer"> slapped together by boobook </a>
         </div>
       </footer>
-      )}
+      )}  
       {active === "twitter" && (
-          <TwitterCanvas y00tid = {y00tId} />
-          )}
+        <div>
+          <TwitterCanvas 
+            y00tid = {y00tId}
+            setDataURL={setDataURL} />
+          <Y00tImage dataURL = {dataURL}/>
+        </div>  
+      )}
     </div>     
   )
 }

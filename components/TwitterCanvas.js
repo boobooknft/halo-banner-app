@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 
 
-const Canvas = ( {y00tid} ) => {
+const Canvas = ( {y00tid, setDataURL} ) => {
 
     const [image, setImage] = useState(null)
     const [imgData, setImgData] = useState({})
@@ -61,13 +61,16 @@ const Canvas = ( {y00tid} ) => {
                 ctx.fillRect(0, 0, 1500, 500);
                 ctx.drawImage(logo, (1500/2) -144, (500/2) - 73, (384 * .75), (197 * .75) );
                 ctx.drawImage(image, (1500-300), (500-300), 300, 300);
+                const data = canvas.current.toDataURL()
+                setDataURL(data)
+                ctx.hidden=true
             }
         }
         drawCanvas()
     },[imgData])
 
   return (
-       <canvas 
+       <canvas hidden
          ref={canvas}
          width={1500}
          height={500}
