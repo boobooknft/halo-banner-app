@@ -3,6 +3,7 @@ import logo from '../assets/y00ts-logo.png'
 import React, { useEffect, useState } from 'react'
 import TwitterCanvas from '../components/TwitterCanvas'
 import Y00tImage from '../components/Y00tImage'
+import halo from '../assets/drippyhalo.png'
 
 export default function Home() {
   const [active, setActive] = useState("y00t")
@@ -25,7 +26,7 @@ export default function Home() {
           justifyContent: "center"
         }}>
           <Image
-        src={logo}
+        src={halo}
         alt="y00ts logo"
         width={275}
         />
