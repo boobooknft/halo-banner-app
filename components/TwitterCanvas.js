@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 
 
+
 const Canvas = ( {y00tid, setDataURL} ) => {
 
     const [image, setImage] = useState(null)
@@ -28,6 +29,7 @@ const Canvas = ( {y00tid, setDataURL} ) => {
         const y00tsLogo = new Image();
         y00tsLogo.crossOrigin = "anonymous"
         y00tsLogo.src= "https://y00ts-wallpaper.vercel.app/_next/image?url=%2Flogo.png&w=384&q=75"
+        // y00tsLogo.src={halo}
         y00tsLogo.onload = () => setLogo(y00tsLogo)
          }, [])
 
