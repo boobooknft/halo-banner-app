@@ -51,7 +51,7 @@ const Canvas = ( {y00tid, setDataURL} ) => {
             if(image && logo) {
                 const ctx = canvas.current.getContext("2d");
                 ctx.drawImage(image, (1500-450), (500-300), 300, 300)
-                const imageData = ctx.getImageData((1500-299),(500-299),1,1);
+                const imageData = ctx.getImageData((1500-449),(500-299),1,1);
                 setImgData(imageData)
             }
         }
