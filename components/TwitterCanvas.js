@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useRef } from 'react'
 import halo from '../assets/drippyhalo.png'
-
+import paintBackground from '../assets/paintSplash.png'
 
 
 const Canvas = ( {y00tid, setDataURL} ) => {
@@ -9,6 +9,7 @@ const Canvas = ( {y00tid, setDataURL} ) => {
     const [image, setImage] = useState(null)
     const [imgData, setImgData] = useState({})
     const [logo, setLogo] = useState(null)
+    const [background, setBackground] = useState(null)
     const y00tImageID = y00tid - 1
 
     const canvas = useRef(null)
@@ -37,7 +38,8 @@ const Canvas = ( {y00tid, setDataURL} ) => {
     useEffect(() => {
         const paintSplash = new Image()
         paintSplash.crossOrigin = "anonymous"
-        paintSplash.src = 
+        paintSplash.src = `${paintBackground}`
+        paintSplash.onLoad = () => setBackground(paintSplash)
     }, [])
 
 
@@ -70,6 +72,7 @@ const Canvas = ( {y00tid, setDataURL} ) => {
                 ctx.fillRect(0, 0, 1500, 500);
                 ctx.drawImage(logo, (1500/2) -144, (500/2) - 73, (384 * .75), (197 * .75) );
                 ctx.drawImage(image, (1500-300), (500-300), 300, 300);
+                ctx.drawImage(background, (1500/2)-750, (500/2)-250, 1500, 500)
                 const data = canvas.current.toDataURL()
                 setDataURL(data)
                 ctx.hidden=true
