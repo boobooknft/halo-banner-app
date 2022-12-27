@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useRef } from 'react'
-import halo from '../assets/drippyhalo.png'
+import halo from './assets/drippyhalo.png'
 
 
 
@@ -29,8 +29,8 @@ const Canvas = ( {y00tid, setDataURL} ) => {
     useEffect(() => {
         const y00tsLogo = new Image();
         y00tsLogo.crossOrigin = "anonymous"
-        // y00tsLogo.src= "https://y00ts-wallpaper.vercel.app/_next/image?url=%2Flogo.png&w=384&q=75"
-        y00tsLogo.src= "https://halo-banner-app.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdrippyhalo.848bd402.png&w=640&q=75"
+        y00tsLogo.src= "https://y00ts-wallpaper.vercel.app/_next/image?url=%2Flogo.png&w=384&q=75"
+        // y00tsLogo.src= "https://halo-banner-app.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdrippyhalo.848bd402.png&w=640&q=75"
         y00tsLogo.onload = () => setLogo(y00tsLogo)
          }, [])
 
@@ -62,7 +62,7 @@ const Canvas = ( {y00tid, setDataURL} ) => {
                 const rgba = `rgba(${red}, ${green}, ${blue}, ${alpha})`
                 ctx.fillStyle = rgba
                 ctx.fillRect(0, 0, 1500, 500);
-                ctx.drawImage(logo, (1500/2) -123, (500/2) - 123, (275 * .9), (275 * .9) );
+                ctx.drawImage(logo, (1500/2) -144, (500/2) - 73, (384 * .75), (197 * .75) );
                 ctx.drawImage(image, (1500-300), (500-300), 300, 300);
                 const data = canvas.current.toDataURL()
                 setDataURL(data)
