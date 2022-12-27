@@ -5,6 +5,7 @@ const Y00tImage = ( {dataURL} ) => {
   return (
     <Image src = {`${dataURL}`} 
         style={{width: '100%'}}
+        alt="paint splash background image"
        />
   )
 }

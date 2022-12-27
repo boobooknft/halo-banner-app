@@ -1,8 +1,5 @@
 
 import React, { useState, useEffect, useRef } from 'react'
-import halo from '../assets/drippyhalo.png'
-import paintBackground from '../assets/paintSplash.png'
-
 
 const Canvas = ( {y00tid, setDataURL} ) => {
 
@@ -38,7 +35,7 @@ const Canvas = ( {y00tid, setDataURL} ) => {
     useEffect(() => {
         const paintSplash = new Image()
         paintSplash.crossOrigin = "anonymous"
-        paintSplash.src = `${paintBackground}`
+        paintSplash.src = "https://www.canva.com/design/DAFV1ALhgOU/CRUubHpIoPyEp3yDTJtVag/edit?utm_content=DAFV1ALhgOU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
         paintSplash.onLoad = () => setBackground(paintSplash)
     }, [])
 
