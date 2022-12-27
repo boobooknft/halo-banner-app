@@ -35,7 +35,7 @@ const Canvas = ( {y00tid, setDataURL} ) => {
     useEffect(() => {
         const paintSplash = new Image()
         paintSplash.crossOrigin = "anonymous"
-        paintSplash.src = "https://www.canva.com/design/DAFV1ALhgOU/CRUubHpIoPyEp3yDTJtVag/edit?utm_content=DAFV1ALhgOU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+        paintSplash.src = "https://www.canva.com/design/DAFV1ALhgOU/CRUubHpIoPyEp3yDTJtVag/view?utm_content=DAFV1ALhgOU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
         paintSplash.onload = () => setBackground(paintSplash)
     }, [])
 
@@ -69,7 +69,7 @@ const Canvas = ( {y00tid, setDataURL} ) => {
                 ctx.fillRect(0, 0, 1500, 500);
                 ctx.drawImage(logo, (1500/2) -144, (500/2) - 73, (384 * .75), (197 * .75) );
                 ctx.drawImage(image, (1500-300), (500-300), 300, 300);
-                ctx.drawImage(background, (1500/2)-750, (500/2)-250, 1500, 500)
+                ctx.drawImage(background, (1500/2), (500/2), 1500, 500)
                 const data = canvas.current.toDataURL()
                 setDataURL(data)
                 ctx.hidden=true
