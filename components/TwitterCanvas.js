@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useRef } from 'react'
-import halo from './assets/drippyhalo.png'
+import halo from '../assets/drippyhalo.png'
 
 
 
@@ -34,6 +34,12 @@ const Canvas = ( {y00tid, setDataURL} ) => {
         y00tsLogo.onload = () => setLogo(y00tsLogo)
          }, [])
 
+    useEffect(() => {
+        const paintSplash = new Image()
+        paintSplash.crossOrigin = "anonymous"
+        paintSplash.src = 
+    }, [])
+
 
     // This draws the image saved in state and grabs the image data from 1 background pixel.
     // This is used to colour the background of the canvas the same as the background of 
@@ -42,7 +48,7 @@ const Canvas = ( {y00tid, setDataURL} ) => {
         const imageData = () => {
             if(image && logo) {
                 const ctx = canvas.current.getContext("2d");
-                ctx.drawImage(image, (1500-300), (500-300), 300, 300)
+                ctx.drawImage(image, (1500-450), (500-300), 300, 300)
                 const imageData = ctx.getImageData((1500-299),(500-299),1,1);
                 setImgData(imageData)
             }
